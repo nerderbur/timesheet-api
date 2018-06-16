@@ -11,7 +11,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-client = MongoClient('mongodb://104.131.24.34:27017/')
+client = MongoClient('mongodb://104.131.24.34:27017/', username='timesheet_user', password='vertis@123')
 
 db = client.timesheet_application
 db.users.create_index([('email', TEXT)], unique=True)
